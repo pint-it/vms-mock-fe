@@ -7,6 +7,11 @@ const nextConfig = {
         hostname: "random.imagecdn.app",
         port: "",
       },
+      {
+        protocol: "https",
+        hostname: "dd9qcr02td8tx.cloudfront.net",
+        port: "",
+      }
     ],
   },
 };

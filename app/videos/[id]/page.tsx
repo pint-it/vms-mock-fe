@@ -1,14 +1,20 @@
 import Video from "@/app/_component/video";
 
-export default function VideoPage({
+export default async function VideoPage({
   params: { id },
 }: {
   params: { id: string };
 }) {
+  const video = await fetch(`${process.env.VMS_API}/assets/${id}`, {
+    cache: "no-store",
+  }).then((response) => response.json());
+  const foundedVideo = video ? true : false;
+
   return (
-    <main className="flex min-h-screen flex-col p-24">
+    <main className="flex min-h-screen flex-col py-24 px-40">
       <h1 className="mb-8 text-2xl text-center">VMS DEMO - VIDEO</h1>
-      <Video />
+      {!foundedVideo && <p>Not found the video.</p>}
+      {foundedVideo && <Video video={video} />}
     </main>
   );
 }

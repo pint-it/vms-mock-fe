@@ -1,10 +1,14 @@
-export default function Video() {
+'use client';
+
+import { VideoI } from '../_lib/interface/video';
+
+export default function Video({video}: {video: VideoI}) {
   return (
     <>
-      <h2 className="text-2xl">This is the title</h2>
+      <h2 className="text-2xl">{video.Title}</h2>
       <div>
-        <video width="100%" height="500" controls preload="none">
-          <source src="/path/to/video.mp4" type="video/mp4" />
+        <video controls preload="none" className='py-2 w-full'>
+          <source src={video.CloudFrontUrl} type={video.Type} />
           <track
             src="/path/to/captions.vtt"
             kind="subtitles"
@@ -13,8 +17,7 @@ export default function Video() {
           />
           Your browser does not support the video tag.
         </video>
-        <p>2024 May 16</p>
-        <p>Description of that video</p>
+        <p>{video.MetaData.metadata_view.description}</p>
       </div>
     </>
   );
