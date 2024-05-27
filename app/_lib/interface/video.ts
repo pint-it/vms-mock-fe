@@ -20,7 +20,8 @@ export type MediaI = {
     Type: string,
     AssetID: string,
     MetaData: VideoMetaDataI,
-    CloudFrontUrl: string
+    CloudFrontUrl: string,
+    Subtitles?: SubtitleI[],
 }
 
 export type VideoI = MediaI;
@@ -41,3 +42,7 @@ export interface VideoMetaDataI {
     version_id: string,
 }
 
+export interface SubtitleI {
+    language: string,
+    url: string,
+}
