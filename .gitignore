@@ -131,3 +131,6 @@ dist
 
 # put some important notes here
 .idea
+
+# macos system files
+.DS_Store
