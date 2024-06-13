@@ -14,7 +14,7 @@ export default function Video({ video }: { video: VideoI }) {
           poster="/video-default-thumbnail-539x303.jpg"
         >
           <source src={video.CloudFrontUrl} type={video.Type} />
-          {hasTitle &&
+          {hasTitle && video.Subtitles && 
             video.Subtitles.map((sub) => (
               <track
                 key={sub.url}
