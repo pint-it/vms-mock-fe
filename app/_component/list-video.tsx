@@ -29,7 +29,7 @@ export default async function ListVideo() {
       {foundedVideo && (
         <div className="grid grid-cols-3 gap-4">
           {listVideos.map((video: VideoI) => (
-            <ListVideoItem video={video} />
+            <ListVideoItem key={video.AssetID} video={video} />
           ))}
         </div>
       )}
