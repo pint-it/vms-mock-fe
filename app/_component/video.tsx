@@ -25,7 +25,7 @@ export default function Video({ video }: { video: VideoI }) {
             ))}
           Your browser does not support the video tag.
         </video>
-        <p>{video.MetaData.metadata_view.description}</p>
+        <p>{video?.MetaData?.metadata_view?.description}</p>
       </div>
     </>
   );
