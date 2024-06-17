@@ -11,7 +11,7 @@ export default async function VideoPage({
   const foundedVideo = video ? true : false;
 
   return (
-    <main className="flex min-h-screen flex-col py-24 px-40">
+    <main className="flex min-h-screen flex-col md:py-10 md:px-40 lg:py-12 lg:px-80">
       <h1 className="mb-8 text-2xl text-center">VMS DEMO - VIDEO</h1>
       {!foundedVideo && <p>Not found the video.</p>}
       {foundedVideo && <Video video={video} />}

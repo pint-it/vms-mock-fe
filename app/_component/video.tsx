@@ -11,7 +11,10 @@ export default function Video({ video }: { video: VideoI }) {
         <video
           controls
           className="py-2 w-full"
-          poster="/video-default-thumbnail-539x303.jpg"
+          // autoPlay
+          // poster="/video-default-thumbnail-539x303.jpg"
+          crossOrigin='anonymous'
+          preload='auto'
         >
           <source src={video.CloudFrontUrl} type={video.Type} />
           {hasTitle && video.Subtitles && 
@@ -21,6 +24,7 @@ export default function Video({ video }: { video: VideoI }) {
                 src={sub.url}
                 kind="subtitles"
                 srcLang={sub.language}
+                // label="English"
               />
             ))}
           Your browser does not support the video tag.
