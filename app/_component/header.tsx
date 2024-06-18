@@ -10,9 +10,6 @@ export default function Header() {
       <Link href="/about" className="hover:text-yellow-200">
         About
       </Link>
-      <Link href="#" className="hover:text-yellow-200">
-        Contact Us
-      </Link>
     </header>
   );
 }
