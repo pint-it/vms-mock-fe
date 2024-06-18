@@ -9,7 +9,7 @@ import ListVideoItem from "./list-video-item";
 
 export default async function ListVideo() {
   const listMedias = (await fetch(`${process.env.VMS_API}/assets`, {
-    next: { revalidate: 180 },
+    cache: "no-store",
   }).then((response) => response.json())) as ListMediaI;
 
   console.log(`${process.env.VMS_API}/assets`);
@@ -24,10 +24,10 @@ export default async function ListVideo() {
 
   return (
     <div className="flex flex-col items-center">
-      <h1 className="mb-8 text-2xl">VMS DEMO - LISTED VIDEOS</h1>
+      <h1 className="mb-10 text-2xl">VMS DEMO - LISTED VIDEOS</h1>
       {!foundedVideo && <p>There are no video found.</p>}
       {foundedVideo && (
-        <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-3 gap-8">
           {listVideos.map((video: VideoI) => (
             <ListVideoItem key={video.AssetID} video={video} />
           ))}

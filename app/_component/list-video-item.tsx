@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import { ListMediaItemI } from "../_lib/interface/video";
 export default function ListVideoItem({ video }: { video: ListMediaItemI }) {
   return (
     <Link
-      className="flex flex-col hover:opacity-80 max-w-[250px]"
+      className="flex flex-col max-w-[250px]"
       href={`/videos/${video.AssetID}`}
     >
       <Image
@@ -15,8 +15,11 @@ export default function ListVideoItem({ video }: { video: ListMediaItemI }) {
         alt={video.Title}
         width={250}
         height={175}
+        className="hover:scale-105 transition duration-[400ms] border border-teal-700 rounded-lg"
       ></Image>
-      <p className="text-ellipsis overflow-hidden ">{video.Title}</p>
+      <p className="text-ellipsis overflow-hidden pt-3 font-medium hover:text-yellow-200">
+        {video.Title}
+      </p>
     </Link>
   );
 }
