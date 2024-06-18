@@ -27,7 +27,7 @@ export default async function ListVideo() {
       <h1 className="mb-10 text-2xl">VMS DEMO - LISTED VIDEOS</h1>
       {!foundedVideo && <p>There are no video found.</p>}
       {foundedVideo && (
-        <div className="grid grid-cols-3 gap-8">
+        <div className="grid grid-cols-3 gap-8 width-full">
           {listVideos.map((video: VideoI) => (
             <ListVideoItem key={video.AssetID} video={video} />
           ))}
