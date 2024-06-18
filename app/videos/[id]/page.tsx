@@ -12,7 +12,7 @@ export default async function VideoPage({
 
   return (
     <main className="flex flex-col">
-      <h1 className="mb-8 text-2xl text-center">VMS DEMO - VIDEO</h1>
+      <h1 className="mb-5 text-2xl text-center">VMS DEMO - VIDEO</h1>
       {!foundedVideo && <p>Not found the video.</p>}
       {foundedVideo && <Video video={video} />}
     </main>
