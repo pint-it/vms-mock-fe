@@ -12,8 +12,6 @@ export default async function ListVideo() {
     cache: "no-store",
   }).then((response) => response.json())) as ListMediaI;
 
-  console.log(`${process.env.VMS_API}/assets`);
-
   const listVideos: VideoI[] = [];
   if (listMedias?.Count > 0) {
     listMedias.Items.forEach((media: MediaI) => {

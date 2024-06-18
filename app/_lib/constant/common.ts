@@ -16,4 +16,10 @@ export const VIDEO_MIME_TYPES = [
     'audio/mpeg',
     'video/mp4',
     'video/mpeg',
+    'video/x-ms-wmv',
+    'video/webm',
+    'video/ogg',
+    'video/mp2t',
+    'video/3gpp',
+    'video/3gpp2',
 ];
