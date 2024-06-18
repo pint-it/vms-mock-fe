@@ -15,7 +15,8 @@ export default async function ListVideo() {
   const listVideos: VideoI[] = [];
   if (listMedias?.Count > 0) {
     listMedias.Items.forEach((media: MediaI) => {
-      if (VIDEO_MIME_TYPES.includes(media.Type)) listVideos.push(media);
+      // if (VIDEO_MIME_TYPES.includes(media.Type)) listVideos.push(media);
+      listVideos.push(media);
     });
   }
   const foundedVideo = listVideos.length > 0;
