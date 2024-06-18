@@ -30,8 +30,12 @@ export default function Video({ video }: { video: VideoI }) {
             ))}
           Your browser does not support the video tag.
         </video>
-        <p className="font-medium text-lg">Description:</p>
-        <p>{video?.MetaData?.metadata_view?.description}</p>
+        {video.MetaData?.metadata_view?.description && (
+          <>
+            <p className="font-medium text-lg">Description:</p>
+            <p>{video.MetaData?.metadata_view?.description}</p>
+          </>
+        )}
       </div>
     </>
   );
